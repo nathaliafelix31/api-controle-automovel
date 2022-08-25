@@ -3,7 +3,7 @@ const mongoose = require('../database');
 
 const CarSchema = new mongoose.Schema({
     
-    licencePlateCar:{
+    licensePlateCar:{
         type: String,
         required: true,
         unique: true,
