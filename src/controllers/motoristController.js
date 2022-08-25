@@ -29,6 +29,18 @@ router.get('/', async (req, res) =>{
     }
 });
 
+router.get('/filter', async (req, res) =>{ 
+    try{
+        
+        const motorists = await Motorist.find({ motorist: req.body.motorist});
+       
+        return res.send({motorists});
+
+    }catch (err){
+        return res.status(400).send({error: 'Error loading motorists'});
+    }
+});
+
 router.get('/:motoristId',async (req, res) =>{ 
     try{
         const motorist = await Motorist.findOne({_id:req.params.motoristId});
