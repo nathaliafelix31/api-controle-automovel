@@ -32,6 +32,21 @@ router.get('/', async (req, res) =>{
     }
 });
 
+router.get('/filter', async (req, res) =>{ 
+    try{
+        let cars = null;
+        if(req.body?.modelCar?.length > 0 && req.body?.colorCar?.length > 0){
+                cars = await Car.find({ modelCar: req.body.modelCar, colorCar: req.body.colorCar });
+        }else{
+            cars = await Car.find({ $or:[ {modelCar: req.body?.modelCar || '' }, { colorCar: req.body?.colorCar || '' } ]});
+        }
+        return res.send({cars});
+
+    }catch (err){
+        return res.status(400).send({error: 'Error loading cars'});
+    }
+});
+
 router.get('/:carId',async (req, res) =>{ 
     try{
         const car = await Car.findOne({_id:req.params.carId});
