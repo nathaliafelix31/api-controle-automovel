@@ -4,11 +4,9 @@ Foi desenvolvido um WebApi para controlar a utilização dos automóveis de uma 
 
 ### ⚙ Funcionalidades
 
-• CRUD de automóvel, como também recuperar um automóvel cadastrado pelo seu identificador
-único e possibilitar que a filtragem seja também por cor e marca do automóvel
+• CRUD de automóvel
 
-• CRUD de motoristas, como também recuperar um motorista cadastrado pelo seu identificador 
-único
+• CRUD de motoristas
 
 • Criação, listagem, e finalização da utilização de um automóvel
 
