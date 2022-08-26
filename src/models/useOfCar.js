@@ -10,16 +10,6 @@ const UseOfCarSchema = new mongoose.Schema({
     
     EndOfUseDate:{
         type: Date,
-        required: true,
-    },
-    motoristUsed:{
-        type: String,
-        required: true,
-    },
-
-    usedCar:{
-        type: String,
-        required: true,
     },
     
     ReasonForUse:{
@@ -30,11 +20,15 @@ const UseOfCarSchema = new mongoose.Schema({
     car:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Car',
+        required: true,
+
     },
 
     motorist:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Motorist',
+        required: true,
+
     },
 
     createdAt:{
